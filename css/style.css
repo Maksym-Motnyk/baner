@@ -3,26 +3,238 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  font-family: "Roboto", sans-serif;
+}
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
 
-.container {
+.banner-container {
+  min-width: 360px;
   position: fixed;
   bottom: 0;
   width: 100%;
   height: 90px;
-  background-repeat: no-repeat;
+  background-image: url("../img/back360-img.png");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
   transition: transform 0.5s ease-in-out;
 }
 
 .container {
-  background-image: url("../img/baner-360.gif");
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bg-wrap {
+  position: absolute;
+  top: 0;
+  left: 3px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.bg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: none;
+  width: 100%;
+  height: 100%;
+
+  background-image: url("../img/polygon-1.png"), url("../img/polygon-3.png"),
+    url("../img/polygon-2.png");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: 88px 81px, 88px 81px, 65px 65px;
+  background-position: left 5px center, left 10px center, left 11px center;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.sneakers-img {
+  position: relative;
+  left: 15px;
+  width: auto;
+  height: auto;
+  max-height: 100%;
+  z-index: 1;
+}
+
+.bg-container-1 {
+  animation: slideTopToBottom 6s ease-in-out infinite;
+}
+
+.bg-container-2 {
+  animation: slideTopToBottom 6s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+@keyframes slideTopToBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  10%,
+  40% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  50%,
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+/* ......................................... */
+.wave-img {
+  position: absolute;
+  bottom: 8px;
+  left: 41px;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.star-img {
+  position: absolute;
+  left: 118px;
+  top: 1px;
+}
+.banner-wrap {
+  position: absolute;
+  left: 135px;
+  top: 26px;
+  overflow: hidden;
+  width: 160px;
+  height: 50px;
+}
+.wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 3px;
+  left: 0;
+  opacity: 0;
+}
+
+.wrap-1 {
+  animation: slideInFromBottom 6s infinite;
+}
+
+.wrap-2 {
+  animation: slideOutToTop 6s infinite;
+}
+
+@keyframes slideOutToTop {
+  0%,
+  50% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  60%,
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+@keyframes slideInFromBottom {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  10%,
+  40% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+.banner-title {
+  font-size: 27px;
+  letter-spacing: 0px;
+  line-height: 16px;
+  color: #ffc400;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 9px;
+  animation-name: title;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  text-align: center;
+}
+.banner-style {
+  font-size: 12px;
+  letter-spacing: 0px;
+  line-height: 18px;
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+}
+.banner-btn {
+  position: absolute;
+  right: 9px;
+  top: 24px;
+  width: 66px;
+  height: 41px;
+  border-radius: 11px;
+  background-color: #ffffff;
+  border: none;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 15px;
+  color: #283693;
+  font-weight: 700;
+  text-align: center;
+  animation: pulse 3s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+  }
+}
+
+.baner-dots {
+  position: absolute;
+  right: -20px;
+  top: -20px;
+}
+.baner-circle {
+  position: absolute;
+  bottom: 2px;
+  right: 77px;
 }
 
 .close-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
   background: transparent;
   border: none;
-  cursor: pointer;
   color: #fff;
 }
 .close-btn:hover svg {
@@ -33,15 +245,109 @@
 }
 
 @media (min-width: 768px) {
-  .container {
-    background-image: url("../img/baner-768.gif");
+  .bg-container {
+    left: 43px;
+    background-size: 121px 111px, 121px 111px, 121px 111px;
+    background-position: left 5px center, left 10px center, left 11px center;
+  }
+  .sneakers-img {
+    width: 148px;
+    height: 89px;
+    top: 1px;
+    left: 20px;
+  }
+  .wave-img {
+    bottom: 0;
+    left: 117px;
+  }
+  .star-img {
+    left: 252px;
+    top: 4px;
+    width: 28px;
+    height: 28px;
+  }
+  .banner-wrap {
+    position: absolute;
+    height: 100%;
+    top: 10px;
+    left: 299px;
+    width: 234px;
+  }
+  .wrap {
+    width: 234px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .banner-title {
+    font-size: 48px;
+    line-height: 30px;
+    font-style: italic;
+    margin-bottom: 17px;
+  }
+  .banner-style {
+    font-size: 21px;
+    line-height: 32px;
+  }
+
+  .banner-btn {
+    width: 175px;
+    height: 41px;
+    border-radius: 20px;
+    font-size: 28px;
+    letter-spacing: 1px;
+    right: 33px;
+  }
+  .baner-circle {
+    right: 202px;
+    bottom: 9px;
+    width: 27px;
+    height: 27px;
+  }
+  .baner-dots {
+    top: 21px;
+    right: -14px;
+    width: 46px;
+    height: 44px;
+    border-radius: 1px;
   }
 }
 
 @media (min-width: 1024px) {
-  .banner {
-    background-image: url("../img/baner-1024.gif");
+  .container {
     max-width: 1024px;
     margin: 0 auto;
+  }
+  .bg-wrap {
+    left: 109px;
+  }
+
+  .baner-dots {
+    right: 4px;
+  }
+  .banner-btn {
+    top: 26px;
+    right: 87px;
+    width: 158px;
+    height: 37px;
+    border-radius: 18px;
+    font-size: 25px;
+    letter-spacing: 1px;
+  }
+  .baner-circle {
+    right: 302px;
+    bottom: 9px;
+  }
+  .banner-wrap {
+    left: 395px;
+  }
+  .banner-title {
+    font-size: 49px;
+  }
+  .banner-style {
+    font-size: 22px;
+  }
+  .star-img {
+    left: 334px;
   }
 }

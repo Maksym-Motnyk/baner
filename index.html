@@ -3,28 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Baner</title>
   </head>
   <body>
-    <div class="container">
-      <button class="close-btn">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <line x1="18" y1="6" x2="6" y2="18" />
-          <line x1="6" y1="6" x2="18" y2="18" />
-        </svg>
-      </button>
-    </div>
+    <div class="banner-container">
+      <div class="container">
 
+        <div class="bg-wrap">
+          <img class="wave-img" src="./img/wave-img.png" alt="wawe" />
+          <div class="bg-container bg-container-1">
+            <img
+              src="./img/sneakers-img.png"
+              alt="sneakers-img"
+              class="sneakers-img"
+            />
+          </div>
+          <div class="bg-container bg-container-2">
+            <img
+              src="./img/sale - women.png"
+              alt="sneakers-img"
+              class="sale-woman"
+            />
+          </div>
+        </div>
+        <button class="close-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+
+        <img class="star-img" src="./img/star-img.png" alt="star" />
+
+        <div class="banner-wrap">
+          <div class="wrap wrap-1">
+            <h1 class="banner-title">Best Seller</h1>
+            <p class="banner-style">NEW STYLE</p>
+          </div>
+          <div class="wrap wrap-2">
+            <h1 class="banner-title">Super Sale</h1>
+            <p class="banner-style">NEW ARRIVAL</p>
+          </div>
+        </div>
+        <button class="banner-btn">BUY NOW</button>
+        <img class="baner-dots" src="./img/dots-img.png" alt="dots" />
+        <img class="baner-circle" src="./img/circle-img.png" alt="circle-img" />
+      </div>
+    </div>
     <script type="module" src="./script.js"></script>
   </body>
 </html>
